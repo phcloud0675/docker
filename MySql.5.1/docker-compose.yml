@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mysql:
+    image: mariadb:10.5.8
+    container_name: mysql55
+    environment:
+      MYSQL_ROOT_PASSWORD: TheOne
+    volumes:
+      - gsia:/var/lib/mysql
+    command: --lower_case_table_names=1
+    ports:
+      - "3306:3306"
+
+volumes:
+  gsia:
